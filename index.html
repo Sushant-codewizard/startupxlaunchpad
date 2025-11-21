@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Genesis — Startup Launchpad</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Configuration (using Inter font) */
+        :root {
+            --color-primary: #8b5cf6; /* Violet-500 */
+            --color-secondary: #3b82f6; /* Blue-500 */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark charcoal/GitHub dark theme background */
+            color: #e5e7eb; /* Light gray text */
+        }
+        
+        .hero-gradient-bg {
+            background: radial-gradient(circle at center top, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        }
+        
+        .card-bg {
+            background-color: #161b22; /* Slightly lighter card background */
+            border: 1px solid #2f3339; /* Subtle border */
+        }
+        
+        .cta-button {
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Utility for Icon SVGs */
+        .icon-svg {
+            stroke-width: 1.5;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        
+        /* Floating Animation */
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation-3s {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        .float-animation-4s {
+            animation: floating 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-black/50 backdrop-blur-md border-b border-gray-800/50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-extrabold tracking-tight text-white flex items-center">
+                <span class="text-violet-500 mr-2">Z</span>enith <span class="text-blue-500 ml-1">Genesis</span>
+            </a>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-400 hover:text-white transition duration-200">Features</a>
+                <a href="#process" class="text-gray-400 hover:text-white transition duration-200">Process</a>
+                <a href="#testimonials" class="text-gray-400 hover:text-white transition duration-200">Testimonials</a>
+                <a href="#pricing" class="text-gray-400 hover:text-white transition duration-200">Pricing</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition duration-200">Contact</a>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#" class="hidden md:inline-block cta-button px-5 py-2 text-sm font-semibold rounded-full text-white shadow-lg shadow-violet-500/30">
+                Start Free Trial
+            </a>
+            
+            <!-- Mobile Menu Button (Hamburger Icon) - Functional JS added below -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-black/80">
+            <a href="#features" class="block text-gray-200 hover:text-white transition duration-200 py-2">Features</a>
+            <a href="#process" class="block text-gray-200 hover:text-white transition duration-200 py-2">Process</a>
+            <a href="#testimonials" class="block text-gray-200 hover:text-white transition duration-200 py-2">Testimonials</a>
+            <a href="#pricing" class="block text-gray-200 hover:text-white transition duration-200 py-2">Pricing</a>
+            <a href="#contact" class="block text-gray-200 hover:text-white transition duration-200 py-2">Contact</a>
+            <a href="#" class="block cta-button w-full text-center mt-4 py-2 font-semibold rounded-full text-white shadow-lg shadow-violet-500/30">
+                Start Free Trial
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- 1. Hero Section -->
+        <section id="hero" class="hero-gradient-bg pt-20 pb-32 text-center">
+            <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-tight tracking-tight mb-6 text-white">
+                The <span class="text-violet-500">Genesis</span> of Your Startup
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+                Zenith Genesis is the ultimate Founder Toolkit—accelerating your launch, perfecting your pitch, and streamlining your MVP development process.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#pricing" class="cta-button px-8 py-3 text-lg font-bold rounded-full text-white shadow-xl shadow-violet-500/40">
+                    Get Started Now
+                </a>
+                <a href="#features" class="bg-gray-700 hover:bg-gray-600 px-8 py-3 text-lg font-semibold rounded-full text-white transition duration-200">
+                    Learn More
+                </a>
+            </div>
+            
+            <!-- Mock Product Screenshot/Image Placeholder (SVG for aesthetics) -->
+            <!-- Applying floating animation here for visual appeal -->
+            <div class="mt-20 w-full p-4 card-bg rounded-xl shadow-2xl shadow-violet-900/40 border-2 border-violet-500/20 float-animation-3s">
+                <div class="h-64 sm:h-96 w-full bg-black rounded-lg flex items-center justify-center text-gray-600 border border-gray-700/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-16 h-16 text-violet-500/30">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m-1.424-2.847L14.722 13.9a4.5 4.5 0 0 0 0-4.8l-1.146-.613M10.707 6.293L12 7.586l1.293-1.293M12 21v-4.5m-3 0v4.5m6-4.5v4.5M3 12h-.008M21 12h.008M4.293 4.293L6.101 6.101M17.899 6.101L19.707 4.293M4.293 19.707L6.101 17.899M17.899 17.899L19.707 19.707" />
+                    </svg>
+                    <p class="ml-4 text-violet-500/30 text-lg hidden sm:block">Product Dashboard Interface Mockup</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Features Section -->
+        <section id="features" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">
+                Everything You Need, Instantly.
+            </h2>
+            <p class="text-xl text-center text-gray-400 mb-16 max-w-3xl mx-auto">
+                Stop wasting time on boilerplate. Our toolkit gives you validated models, code snippets, and design systems for rapid deployment.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Feature 1: AI-Powered Research -->
+                <div class="card-bg p-8 rounded-xl flex flex-col items-start hover:shadow-xl hover:shadow-blue-500/20 transition duration-300 transform hover:-translate-y-1">
+                    <div class="p-3 mb-4 rounded-full bg-blue-500/20 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.455L14.25 6l1.035-.259a3.375 3.375 0 0 0 2.455-2.455L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.455L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.455 2.455ZM19.5 19.5l-.75.75V15.75M16.5 12V4.5M10.75 12a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">AI-Powered Validation</h3>
+                    <p class="text-gray-400">Get instant market analysis and user persona validation reports generated by our proprietary AI model, saving months of research time.</p>
+                </div>
+                
+                <!-- Feature 2: Deployable Code Templates -->
+                <div class="card-bg p-8 rounded-xl flex flex-col items-start hover:shadow-xl hover:shadow-violet-500/20 transition duration-300 transform hover:-translate-y-1">
+                    <div class="p-3 mb-4 rounded-full bg-violet-500/20 text-violet-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 4.5h12c.969 0 1.75.781 1.75 1.75v10.5A1.75 1.75 0 0 1 18 18.75H6A1.75 1.75 0 0 1 4.25 17.25V6.25c0-.969.781-1.75 1.75-1.75Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Code Launchpad</h3>
+                    <p class="text-gray-400">Boilerplate code for authentication, payments, and database setup, ready to be deployed to your preferred cloud provider (Vercel, AWS, etc).</p>
+                </div>
+
+                <!-- Feature 3: Legal & Financial Templates -->
+                <div class="card-bg p-8 rounded-xl flex flex-col items-start hover:shadow-xl hover:shadow-green-500/20 transition duration-300 transform hover:-translate-y-1">
+                    <div class="p-3 mb-4 rounded-full bg-green-500/20 text-green-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 3c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10S17.523 3 12 3Zm-5.716 5.905c.008.15.018.3.03.447L12 12m0 0v1.5m0-1.5L9.293 9.293M12 12V9.75m0 0a1.125 1.125 0 0 0-1.125 1.125v1.5a1.125 1.125 0 0 0 1.125 1.125m-3.75-5.625h4.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Compliance & Docs</h3>
+                    <p class="text-gray-400">Pre-vetted legal documents (NDA, ToS, Privacy Policy) and essential financial models (Burn Rate, Runway) to protect your venture.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. New Section: How It Works / Process -->
+        <section id="process" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">
+                Launch in 3 Simple Steps.
+            </h2>
+            <p class="text-xl text-center text-gray-400 mb-16 max-w-3xl mx-auto">
+                Our accelerated framework guides you from concept to code in a fraction of the time.
+            </p>
+
+            <div class="relative flex flex-col md:flex-row justify-between items-center space-y-12 md:space-y-0 md:space-x-8">
+
+                <!-- Step 1 Card -->
+                <div class="card-bg p-8 rounded-xl text-center w-full md:w-1/3 shadow-xl border-violet-500/30 float-animation-4s" style="animation-delay: 0s;">
+                    <div class="text-4xl font-extrabold text-violet-500 mb-4">1</div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Define & Validate</h3>
+                    <p class="text-gray-400 mb-6">Use our AI tools to validate your market, solidify your unique value proposition, and define your MVP features.</p>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold transition duration-200">Start Validation Tools &rarr;</a>
+                </div>
+
+                <!-- Connector Arrow (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 -mt-1 w-full flex justify-center z-0">
+                    <svg class="w-2/3 h-1 text-gray-700" viewBox="0 0 100 1" preserveAspectRatio="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3">
+                        <line x1="0" y1="0" x2="100" y2="0"/>
+                    </svg>
+                </div>
+
+                <!-- Step 2 Card -->
+                <div class="card-bg p-8 rounded-xl text-center w-full md:w-1/3 shadow-xl border-blue-500/30 float-animation-4s" style="animation-delay: 0.5s;">
+                    <div class="text-4xl font-extrabold text-blue-500 mb-4">2</div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Build & Iterate</h3>
+                    <p class="text-gray-400 mb-6">Select from our library of deployable code templates and integrate our pre-built payment and authentication systems.</p>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold transition duration-200">Browse Code Templates &rarr;</a>
+                </div>
+
+                <!-- Step 3 Card -->
+                <div class="card-bg p-8 rounded-xl text-center w-full md:w-1/3 shadow-xl border-green-500/30 float-animation-4s" style="animation-delay: 1s;">
+                    <div class="text-4xl font-extrabold text-green-500 mb-4">3</div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Launch & Scale</h3>
+                    <p class="text-gray-400 mb-6">Deploy your product with a single click and access expert resources for marketing, legal, and funding preparation.</p>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold transition duration-200">Prepare for Launch &rarr;</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. New Section: Testimonials -->
+        <section id="testimonials" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">
+                Trusted by Founders Worldwide.
+            </h2>
+            <p class="text-xl text-center text-gray-400 mb-16 max-w-3xl mx-auto">
+                Read what real entrepreneurs say about cutting their development time with Zenith Genesis.
+            </p>
+
+            <!-- Testimonial Grid (Static for this single file) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="card-bg p-6 rounded-xl shadow-lg border-2 border-gray-700 hover:shadow-violet-900/40 transition duration-300 float-animation-3s">
+                    <p class="text-lg italic text-gray-200 mb-4">
+                        "We launched in 4 weeks instead of 4 months. Zenith Genesis didn't just save us time; it gave us a massive competitive edge. The code templates were flawless."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/40x40/8b5cf6/ffffff?text=JM" alt="Avatar" class="rounded-full mr-3">
+                        <div>
+                            <p class="font-bold text-white">Jasmine Moore</p>
+                            <p class="text-sm text-gray-500">CEO, Synapse AI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 (Delayed Float) -->
+                <div class="card-bg p-6 rounded-xl shadow-lg border-2 border-gray-700 hover:shadow-blue-900/40 transition duration-300 float-animation-4s" style="animation-delay: 1s;">
+                    <p class="text-lg italic text-gray-200 mb-4">
+                        "The legal document kit alone paid for the subscription ten times over. I had full confidence launching knowing our fundamentals were compliant and strong."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/40x40/3b82f6/ffffff?text=AK" alt="Avatar" class="rounded-full mr-3">
+                        <div>
+                            <p class="font-bold text-white">Alex Kim</p>
+                            <p class="text-sm text-gray-500">Founder, Orbit Payments</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="card-bg p-6 rounded-xl shadow-lg border-2 border-gray-700 hover:shadow-green-900/40 transition duration-300 float-animation-3s" style="animation-delay: 0.5s;">
+                    <p class="text-lg italic text-gray-200 mb-4">
+                        "The most valuable part was the AI-powered market validation. It stopped us from building a product nobody wanted before we wrote a single line of production code."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/40x40/10b981/ffffff?text=SD" alt="Avatar" class="rounded-full mr-3">
+                        <div>
+                            <p class="font-bold text-white">Sara Diaz</p>
+                            <p class="text-sm text-gray-500">CTO, DataStream</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Pricing Section (Original Section 3) -->
+        <section id="pricing" class="py-20 border-t border-gray-800">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">
+                Simple Pricing for Founders.
+            </h2>
+            <p class="text-xl text-center text-gray-400 mb-16 max-w-3xl mx-auto">
+                No surprises. Choose the plan that fits your stage, from initial concept to hyper-growth.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- Tier 1: Pioneer -->
+                <div class="card-bg p-8 rounded-xl shadow-lg border-2 border-gray-700">
+                    <h3 class="text-2xl font-bold mb-2 text-white">Pioneer</h3>
+                    <p class="text-gray-400 mb-4">For the solo founder validating an idea.</p>
+                    <p class="text-5xl font-extrabold text-white mb-6">
+                        $29<span class="text-xl font-medium text-gray-400">/month</span>
+                    </p>
+                    <ul class="space-y-3 text-gray-300 mb-8">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg text-green-500 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            Access to 5 Core Templates
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg text-green-500 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            Basic Legal Document Kit
+                        </li>
+                        <li class="flex items-center opacity-50">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg text-gray-500 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+                            Dedicated Advisor Support
+                        </li>
+                    </ul>
+                    <a href="#" class="w-full block text-center bg-gray-600 hover:bg-gray-500 py-3 font-semibold rounded-lg text-white transition duration-200">
+                        Select Pioneer
+                    </a>
+                </div>
+
+                <!-- Tier 2: Genesis (MOST POPULAR) -->
+                <div class="card-bg p-8 rounded-xl shadow-2xl border-4 border-violet-500/80 bg-black">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-2xl font-bold text-violet-400">Genesis</h3>
+                        <span class="px-3 py-1 text-xs font-bold uppercase rounded-full bg-violet-500 text-white shadow-md shadow-violet-500/50">
+                            Most Popular
+                        </span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Everything needed for a professional launch.</p>
+                    <p class="text-5xl font-extrabold text-white mb-6">
+                        $79<span class="text-xl font-medium text-gray-400">/month</span>
+                    </p>
+                    <ul class="space-y-3 text-gray-300 mb-8">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg text-green-500 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            <span class="font-bold text-violet-300">Unlimited</span> Core Templates
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg text-green-500 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            Full Compliance & Financial Models
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg text-green-500 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            1 Hour Monthly Advisor Check-in
+                        </li>
+                    </ul>
+                    <a href="#" class="w-full block text-center cta-button py-3 font-bold rounded-lg text-white shadow-xl shadow-violet-500/40">
+                        Start Genesis Plan
+                    </a>
+                </div>
+
+                <!-- Tier 3: Zenith -->
+                <div class="card-bg p-8 rounded-xl shadow-lg border-2 border-gray-700">
+                    <h3 class="text-2xl font-bold mb-2 text-white">Zenith</h3>
+                    <p class="text-gray-400 mb-4">For venture-backed teams focused on scaling.</p>
+                    <p class="text-5xl font-extrabold text-white mb-6">
+                        $299<span class="text-xl font-medium text-gray-400">/month</span>
+                    </p>
+                    <ul class="space-y-3 text-gray-300 mb-8">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg text-green-500 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            All Genesis features
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg text-green-500 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            24/7 Priority Tech Support
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="icon-svg text-green-500 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            Dedicated Account Manager
+                        </li>
+                    </ul>
+                    <a href="#" class="w-full block text-center bg-gray-600 hover:bg-gray-500 py-3 font-semibold rounded-lg text-white transition duration-200">
+                        Select Zenith
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- 6. Final CTA / Contact Section (Original Section 4) -->
+        <section id="contact" class="py-20 border-t border-gray-800">
+            <div class="card-bg p-12 rounded-xl text-center border-2 border-blue-500/20 shadow-xl shadow-blue-900/40">
+                <h2 class="text-4xl font-bold mb-4 text-white">
+                    Ready to Launch Faster?
+                </h2>
+                <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Join thousands of founders who cut their time-to-market by 60% with the Zenith Genesis Toolkit.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#pricing" class="cta-button px-8 py-3 text-lg font-bold rounded-full text-white shadow-xl shadow-violet-500/40">
+                        Start Your Free 14-Day Trial
+                    </a>
+                    <a href="#" class="bg-gray-700 hover:bg-gray-600 px-8 py-3 text-lg font-semibold rounded-full text-white transition duration-200">
+                        Book a Demo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+            <p>&copy; 2024 Zenith Genesis. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition duration-200">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition duration-200">Terms of Service</a>
+                <a href="#process" class="hover:text-white transition duration-200">Process Guide</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Toggle menu visibility
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close menu when a link is clicked (for better mobile UX)
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
